@@ -1,8 +1,16 @@
 #yiimp - yaamp fork
 
 Required:
+  linux, mysql, php, memcached, a webserver (lighttpd or nginx recommended)
+	## How to install them :
+	### New build from source & deploying everything into a brand new container
+	./deploy.sh
 
-	linux, mysql, php, memcached, a webserver (lighttpd or nginx recommended)
+	### Clear everything to prepare for a re-deploy
+	./clear.sh
+
+	### Post deploy installation
+	./install.sh
 
 
 Config for nginx:
@@ -53,7 +61,7 @@ Your database need at least 2 users, one for the web site (php) and one for the 
 
 
 
-The recommended install folder for the stratum engine is /var/stratum. Copy all the .conf files, run.sh, the stratum binary and the blocknotify binary to this folder. 
+The recommended install folder for the stratum engine is /var/stratum. Copy all the .conf files, run.sh, the stratum binary and the blocknotify binary to this folder.
 
 Some scripts are expecting the web folder to be /var/web. You can use directory symlinks...
 
@@ -128,4 +136,3 @@ Thanks to globalzon to have released the initial Yaamp source code.
 You can support this project donating to tpruvot :
 
 BTC : 1Auhps1mHZQpoX4mCcVL8odU81VakZQ6dR
-
