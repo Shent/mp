@@ -2,14 +2,15 @@
 
 Required:
   linux, mysql, php, memcached, a webserver (lighttpd or nginx recommended)
-	## How to install them :
-	### New build from source & deploying everything into a brand new container
+  How to install them :
+	
+	New build from source & deploying everything into a brand new container:
 	./deploy.sh
 
-	### Clear everything to prepare for a re-deploy
+	Clear everything to prepare for a re-deploy:
 	./clear.sh
 
-	### Post deploy installation
+	Post deploy installation:
 	./install.sh
 
 
