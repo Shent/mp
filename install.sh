@@ -11,7 +11,6 @@ displayErr() {
     echo
     exit 1;
 }
-clear
 output "Make sure you double check before hitting enter! Only one shot at these!"
 output ""
     read -e -p "Enter time zone (e.g. America/New_York) : " TIME
@@ -25,7 +24,6 @@ output ""
     read -e -p "Install UFW and configure ports? [Y/n] : " UFW
     read -e -p "Install LetsEncrypt SSL? IMPORTANT! You MUST have your domain name pointed to this server prior to running the script!! [Y/n]: " ssl_install
 
-    clear
     output "If you found this helpful, please donate to BTC Donation: 18AwGT19befE4Z3siEiAzsF8n9MoJEifiH"
     output ""
     output "Updating system and installing required packages."
@@ -35,7 +33,6 @@ output ""
       apt-get -y update
       apt-get -y upgrade
       apt-get -y autoremove
-    clear
     output "Switching to Aptitude"
     output ""
       apt-get -y install aptitude
@@ -82,7 +79,6 @@ default         0;
       aptitude -y install sendmail
       aptitude -y install git
       aptitude -y install pwgen -y
-    clear
 
     #Generating Random Passwords
     password=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
@@ -147,7 +143,6 @@ default         0;
       ufw --force enable
     fi
 
-    clear
     output "Installing phpmyadmin"
     output ""
     echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect" |   debconf-set-selections
@@ -215,7 +210,6 @@ exec bash
       aptitude -y install ntpdate
     # write time to clock.
       hwclock -w
-    clear
     output "Making Web Server Magic Happen!"
     # adding user to group, creating dir structure, setting permissions
         mkdir -p /var/www/$server_name/html
@@ -616,7 +610,6 @@ echo 'include /etc/nginx/blockuseragents.rules;
   service nginx restart
   service php7.0-fpm reload
 fi
-    clear
     output "Now for the database fun!"
     # create database
     Q1="CREATE DATABASE IF NOT EXISTS yiimpfrontend;"
@@ -702,7 +695,6 @@ define('"'"'EXCH_YOBIT_SECRET'"'"', '"'"''"'"');
        mysql --defaults-group-suffix=host1 --force < 2017-11-segwit.sql
        mysql --defaults-group-suffix=host1 --force < 2018-01-stratums_ports.sql
 
-    clear
     output "Generating a basic serverconfig.php"
     output ""
     # make config file
@@ -813,7 +805,6 @@ whoami=`whoami`
   mv $HOME/yiimp/ $HOME/yiimp-install-only-do-not-run-commands-from-this-folder
   service nginx restart
   service php7.0-fpm reload
-clear
 output "Whew that was fun, just some reminders. Your mysql information is saved in ~/.my.cnf. this installer did not directly install anything required to build coins."
 output ""
 output "Please make sure to change your wallet addresses in the /var/web/serverconfig.php file."
