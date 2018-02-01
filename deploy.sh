@@ -11,7 +11,7 @@ docker build -t ubuntu:my-ubuntu .
 
 
 output "Running a new container from the image"
-docker run --privileged --name my-ubuntu -p 80:8002 -d ubuntu:my-ubuntu
+docker run --privileged --name my-ubuntu -p 8002:80 -d ubuntu:my-ubuntu
 
 output "Logging into the newly created contaienr"
 docker exec -it my-ubuntu bash
