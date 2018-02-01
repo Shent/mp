@@ -13,6 +13,6 @@ RUN apt-get install nano
 # RUN apt-get install memcached
 
 ENV DEBIAN_FRONTEND teletype
-EXPOSE 80
+EXPOSE 8002
 
 CMD tail -f /dev/null
