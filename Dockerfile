@@ -9,8 +9,6 @@ RUN chmod 755 ./install.sh
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install nano
-# RUN apt-get install php-memcached
-# RUN apt-get install memcached
 
 ENV DEBIAN_FRONTEND teletype
 EXPOSE 8002
